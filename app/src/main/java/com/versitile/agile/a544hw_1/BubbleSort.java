@@ -4,14 +4,12 @@ package com.versitile.agile.a544hw_1;
  * Created by adam on 8/29/17.
  */
 
-public class BubbleSort implements ISort
-{
-    public int[] sortIntegers(int[] listToSort)
-    {
+public class BubbleSort implements ISort {
+
+    public int[] sortIntegers(int[] listToSort) {
         int numberOfSwaps = 0;
 
-        for (int i = listToSort.length -1; i > 0; i--)
-        {
+        for (int i = listToSort.length -1; i > 0; i--) {
             int currentIndex = listToSort[i];
             int prevIndex = listToSort[i-1];
             if(currentIndex < prevIndex) {
