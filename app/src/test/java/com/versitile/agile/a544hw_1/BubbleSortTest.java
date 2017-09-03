@@ -24,8 +24,7 @@ public class BubbleSortTest {
 
 
     @Test
-    public void bubbleSortReturnsCorrectlySortedList()
-    {
+    public void bubbleSortReturnsCorrectlySortedList() {
         int[] initialList = new int[5];
 
         initialList[0] = createRandomInt();
@@ -43,8 +42,7 @@ public class BubbleSortTest {
     }
 
     @Test
-    public void bubbleSortNegativeTest()
-    {
+    public void bubbleSortNegativeTest() {
         int[] initialList = new int[3];
 
         initialList[0] = 5;

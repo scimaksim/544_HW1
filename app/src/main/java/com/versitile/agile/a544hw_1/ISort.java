@@ -4,8 +4,7 @@ package com.versitile.agile.a544hw_1;
  * Created by adam on 8/29/17.
  */
 
-public interface ISort
-{
+public interface ISort {
     /**
      * For a given list of integers, sort in ascending order
      *
