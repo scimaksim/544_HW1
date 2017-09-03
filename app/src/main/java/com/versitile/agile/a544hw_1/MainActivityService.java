@@ -17,7 +17,7 @@ public class MainActivityService implements IMainActivityService {
     }
 
     // Demi says hi
-    
+
     public String getInitialInput() {
         return mInitialInput;
     }
