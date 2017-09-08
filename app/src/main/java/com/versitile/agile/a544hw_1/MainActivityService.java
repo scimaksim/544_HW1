@@ -2,6 +2,8 @@ package com.versitile.agile.a544hw_1;
 
 import android.support.annotation.VisibleForTesting;
 
+import java.util.ArrayList;
+
 /**
  * Created by adam on 9/2/17.
  */
@@ -28,9 +30,10 @@ public class MainActivityService implements IMainActivityService {
 
         validateLengthOfInput(inputIntegers);
 
-        int[] sortedIntegers = mSortUtility.sortIntegers(inputIntegers);
+//        int[] sortedIntegers = mSortUtility.sortIntegers(inputIntegers);
+        mSortUtility.sortIntegers(inputIntegers);
 
-        return createReadableOutput(sortedIntegers);
+        return createReadableOutput(mSortUtility.getSortStages());
     }
 
     /**
@@ -54,18 +57,24 @@ public class MainActivityService implements IMainActivityService {
     /**
      * for a given array add any necessary style and finally convert to a string
      *
-     * @param outputArray
+     * @param outputObject
      * @return a formatted string ready to add to the view
      */
-    private String createReadableOutput(int[] outputArray) {
+    private String createReadableOutput(ArrayList<int[]> outputObject) {
         StringBuilder sb = new StringBuilder();
 
-        for (int j = 0; j < outputArray.length; j++) {
-            sb.append(outputArray[j]);
+        for (int j = 0; j < outputObject.size(); j++) {
+            int[] outputArray = outputObject.get(j);
 
-            if (j != outputArray.length -1) {
-                sb.append(" ");
+            for (int k = 0; k < outputArray.length; k++) {
+                sb.append(outputArray[k]);
+
+                if (j != outputArray.length -1) {
+                    sb.append(" ");
+                }
             }
+            sb.append("\n");
+
         }
 
         return sb.toString();

@@ -1,10 +1,16 @@
 package com.versitile.agile.a544hw_1;
 
+import java.util.ArrayList;
+
 /**
  * Created by adam on 8/29/17.
  */
 
 public class BubbleSort implements ISort {
+
+    private ArrayList<int[]> mSortStages = new ArrayList<>();
+
+    public ArrayList<int[]> getSortStages() { return mSortStages; }
 
     public int[] sortIntegers(int[] listToSort) {
         int numberOfSwaps = 0;
@@ -17,6 +23,11 @@ public class BubbleSort implements ISort {
                 swap(currentIndex, prevIndex, i, listToSort);
             }
         }
+
+        int[] listToSortCopy = new int[listToSort.length];
+        System.arraycopy(listToSort, 0, listToSortCopy, 0, listToSort.length);
+
+        mSortStages.add(listToSortCopy);
 
         if ( numberOfSwaps == 0) {
             return listToSort;
@@ -37,4 +48,5 @@ public class BubbleSort implements ISort {
 
         return array;
     }
+
 }
