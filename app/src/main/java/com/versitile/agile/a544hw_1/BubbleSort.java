@@ -1,8 +1,13 @@
 package com.versitile.agile.a544hw_1;
 
+import android.widget.TextView;
+
+import java.util.Arrays;
+
 /**
  * Created by adam on 8/29/17.
  */
+
 
 public class BubbleSort implements ISort {
 
@@ -15,6 +20,7 @@ public class BubbleSort implements ISort {
             if(currentIndex < prevIndex) {
                 numberOfSwaps ++;
                 swap(currentIndex, prevIndex, i, listToSort);
+
             }
         }
 
@@ -28,12 +34,13 @@ public class BubbleSort implements ISort {
         return listToSort;
     }
 
-    private int[] swap(int value1, int value2, int index, int[] array) {
+    public int[] swap(int value1, int value2, int index, int[] array) {
 
         if (value1 < value2) {
             array[index] = value2;
             array[index - 1] = value1;
         }
+        MainActivity.mIntermediateArray.append(Arrays.toString(array) + "\n");
 
         return array;
     }

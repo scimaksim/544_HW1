@@ -8,11 +8,17 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView mSortedListDisplayBox;
     TextView mErrorTextBox;
     TextView mNumberInput;
+
+    public static TextView mIntermediateArray;
+
+
     Button mSortButton;
     ISort bubbleSort = new BubbleSort();
 
@@ -25,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mErrorTextBox = (TextView) findViewById(R.id.errorText);
         mNumberInput = (TextView) findViewById(R.id.numberInput);
         mSortButton = (Button) findViewById(R.id.sortButton);
+        mIntermediateArray = (TextView) findViewById(R.id.intermText);
+
 
         mSortButton.setOnClickListener(MainActivity.this);
     }
@@ -42,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Display stuff
         try {
             mSortedListDisplayBox.setText(service.transformInput());
+            //mIntermediateArray.append(ISwap);
 
             // Hide the keyboard
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);

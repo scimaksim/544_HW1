@@ -6,10 +6,12 @@ import android.support.annotation.VisibleForTesting;
  * Created by adam on 9/2/17.
  */
 
+
 public class MainActivityService implements IMainActivityService {
 
     String mInitialInput;
     ISort mSortUtility;
+    ISwap mSwapInput;
 
     public MainActivityService(String initialInput, ISort sortUtility) {
         mInitialInput = initialInput;
@@ -18,6 +20,10 @@ public class MainActivityService implements IMainActivityService {
 
     public String getInitialInput() {
         return mInitialInput;
+    }
+
+    public ISwap getSwapInput() {
+        return mSwapInput;
     }
 
     public String transformInput() throws RuntimeException {
@@ -90,4 +96,6 @@ public class MainActivityService implements IMainActivityService {
             throw new RuntimeException("Input must be more than 2 but less than 9 integers.");
         }
     }
+
+
 }
